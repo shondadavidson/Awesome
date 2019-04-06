@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image,ScrollView } from 'react-native';
 import axios from 'axios';
+import {url} from '../../url'
 
 
 class Dashboard extends Component{
@@ -14,7 +15,7 @@ class Dashboard extends Component{
     }
     //ifconfig |grep inet
     componentDidMount(){
-        axios.get(`http://192.168.2.158:3400/api/houses`).then(res => {
+        axios.get(`${url.url}/api/houses`).then(res => {
             console.log(55555,res.data)
             this.setState({
                 houses: res.data
