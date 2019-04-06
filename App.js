@@ -23,10 +23,11 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
 //     );
 //   }
 // }
+
 const navigator = createBottomTabNavigator({
   Home: Dashboard,
   Wizard: Wizard
-})
+  })
 const App = createAppContainer(navigator)
 
 export default App
