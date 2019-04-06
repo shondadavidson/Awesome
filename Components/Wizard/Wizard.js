@@ -7,6 +7,7 @@ class Wizard extends Component{
     constructor(){
         super()
         this.state = {
+            header: null,
             name: '',
             address: '',
             city: '',
@@ -14,14 +15,17 @@ class Wizard extends Component{
             zipcode: ''
         }
     }
+    static navigationOptions = {
+        title: 'Add New Property'
+    }
 
     render(){
         return(
-            <View>
+            <View style={styles.container}>
                 
-                <Text>Wizard</Text>
+                <Text>Add New Listing</Text>
               
-                <TextInput value={this.state.name} placeholder="Name" onChangeText={(name) => this.setState({name})}/>
+                <TextInput value={this.state.name} placeholder="Property Name" onChangeText={(name) => this.setState({name})}/>
                 <TextInput value={this.state.address} placeholder="Address" onChangeText={(address) => this.setState({address})}/>
                 <TextInput value={this.state.city} placeholder="Name" onChangeText={(city) => this.setState({city})}/>
                 <TextInput value={this.state.state} placeholder="Name" onChangeText={(state) => this.setState({state})}/>
@@ -33,3 +37,12 @@ class Wizard extends Component{
 }
 
 export default Wizard
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#F5FCFF',
+    }
+  });

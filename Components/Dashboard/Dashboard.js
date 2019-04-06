@@ -9,6 +9,7 @@ class Dashboard extends Component{
         super(props)
 
         this.state = {
+            header: null,
             houses: [],
             
         }

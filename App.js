@@ -7,32 +7,29 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, StatusBar} from 'react-native';
 import Dashboard from './Components/Dashboard/Dashboard';
 import House from './Components/House/House';
 import Wizard from './Components/Wizard/Wizard';
 import Header from './Components/Header/Header';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
 
 
-export default class App extends Component{
-  render() {
-    return (
-      <View style={styles.container}>
-        <Dashboard />
-        {/* <House />
-        <Wizard />
-        <Header /> */}
-      </View>
-    );
-  }
-}
+// export class App extends Component{
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//       </View>
+//     );
+//   }
+// }
+const navigator = createBottomTabNavigator({
+  Home: Dashboard,
+  Wizard: Wizard
+})
+const App = createAppContainer(navigator)
+
+export default App
 
 const styles = StyleSheet.create({
   container: {

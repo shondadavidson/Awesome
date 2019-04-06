@@ -21,3 +21,5 @@ app.listen(SERVER_PORT, '0.0.0.0', () => {
 })
 
 app.get('/api/houses', ctrl.getAll)
+app.post('/api/house', ctrl.addHouse)
+app.delete('/api/house/:id', ctrl.deleteHouse)
